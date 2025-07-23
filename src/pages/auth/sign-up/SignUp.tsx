@@ -17,6 +17,7 @@ import AppTheme from '../../../shared-theme/AppTheme';
 import ColorModeSelect from '../../../shared-theme/ColorModeSelect';
 import { GoogleIcon, FacebookIcon, SitemarkIcon } from './components/CustomIcons';
 import * as React from 'react';
+import { useNavigate } from '@tanstack/react-router';
 
 const Card = styled(MuiCard)(({ theme }: any) => ({
   display: 'flex',
@@ -67,6 +68,7 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
   const [passwordErrorMessage, setPasswordErrorMessage] = React.useState('');
   const [nameError, setNameError] = React.useState(false);
   const [nameErrorMessage, setNameErrorMessage] = React.useState('');
+  const navigate = useNavigate();
 
   const validateInputs = () => {
     const email = document.getElementById('email') as HTMLInputElement;
@@ -106,8 +108,8 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault(); // Always prevent default form submission
     if (nameError || emailError || passwordError) {
-      event.preventDefault();
       return;
     }
     const data = new FormData(event.currentTarget);
@@ -117,6 +119,8 @@ export default function SignUp(props: { disableCustomTheme?: boolean }) {
       email: data.get('email'),
       password: data.get('password'),
     });
+
+    navigate({ to: '/dashboard' });
   };
 
   return (

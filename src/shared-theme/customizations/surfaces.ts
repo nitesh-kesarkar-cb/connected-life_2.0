@@ -10,7 +10,7 @@ export const surfacesCustomizations: Components<Theme> = {
       disableGutters: true,
     },
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: ({ theme }: any) => ({
         padding: 4,
         overflow: 'clip',
         backgroundColor: (theme.vars || theme).palette.background.default,
@@ -35,7 +35,7 @@ export const surfacesCustomizations: Components<Theme> = {
   },
   MuiAccordionSummary: {
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: ({ theme }: any) => ({
         border: 'none',
         borderRadius: 8,
         '&:hover': { backgroundColor: gray[50] },

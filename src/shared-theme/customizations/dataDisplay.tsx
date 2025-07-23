@@ -21,7 +21,7 @@ export const dataDisplayCustomizations: Components<Theme> = {
   },
   MuiListItem: {
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: ({ theme }: any) => ({
         [`& .${svgIconClasses.root}`]: {
           width: '1rem',
           height: '1rem',
@@ -58,12 +58,12 @@ export const dataDisplayCustomizations: Components<Theme> = {
   },
   MuiListItemText: {
     styleOverrides: {
-      primary: ({ theme }) => ({
+      primary: ({ theme }: any) => ({
         fontSize: theme.typography.body2.fontSize,
         fontWeight: 500,
         lineHeight: theme.typography.body2.lineHeight,
       }),
-      secondary: ({ theme }) => ({
+      secondary: ({ theme }: any) => ({
         fontSize: theme.typography.caption.fontSize,
         lineHeight: theme.typography.caption.lineHeight,
       }),
@@ -71,7 +71,7 @@ export const dataDisplayCustomizations: Components<Theme> = {
   },
   MuiListSubheader: {
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: ({ theme }: any) => ({
         backgroundColor: 'transparent',
         padding: '4px 8px',
         fontSize: theme.typography.caption.fontSize,
@@ -92,7 +92,7 @@ export const dataDisplayCustomizations: Components<Theme> = {
       size: 'small',
     },
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: ({ theme }: any) => ({
         border: '1px solid',
         borderRadius: '999px',
         [`& .${chipClasses.label}`]: {

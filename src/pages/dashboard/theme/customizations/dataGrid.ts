@@ -1,7 +1,7 @@
 import { paperClasses } from '@mui/material/Paper';
 import { alpha } from '@mui/material/styles';
 import type { Theme } from '@mui/material/styles';
-import type { DataGridProComponents } from '@mui/x-data-grid-pro/themeAugmentation';
+import type { DataGridComponents } from '@mui/x-data-grid/themeAugmentation';
 import { menuItemClasses } from '@mui/material/MenuItem';
 import { listItemIconClasses } from '@mui/material/ListItemIcon';
 import { iconButtonClasses } from '@mui/material/IconButton';
@@ -12,10 +12,10 @@ import { tablePaginationClasses } from '@mui/material/TablePagination';
 import { gray } from '../../../../shared-theme/themePrimitives';
 
 /* eslint-disable import/prefer-default-export */
-export const dataGridCustomizations: DataGridProComponents<Theme> & DataGridProComponents<Theme> = {
+export const dataGridCustomizations: DataGridComponents<Theme> & DataGridComponents<Theme> = {
   MuiDataGrid: {
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: ({ theme }: any) => ({
         '--DataGrid-overlayHeight': '300px',
         overflow: 'clip',
         borderColor: (theme.vars || theme).palette.divider,
@@ -43,8 +43,8 @@ export const dataGridCustomizations: DataGridProComponents<Theme> & DataGridProC
           },
         },
       }),
-      cell: ({ theme }) => ({ borderTopColor: (theme.vars || theme).palette.divider }),
-      menu: ({ theme }) => ({
+      cell: ({ theme }: any) => ({ borderTopColor: (theme.vars || theme).palette.divider }),
+      menu: ({ theme }: any) => ({
         borderRadius: theme.shape.borderRadius,
         backgroundImage: 'none',
         [`& .${paperClasses.root}`]: {
@@ -63,7 +63,7 @@ export const dataGridCustomizations: DataGridProComponents<Theme> & DataGridProC
         },
       }),
 
-      row: ({ theme }) => ({
+      row: ({ theme }: any) => ({
         '&:last-of-type': { borderBottom: `1px solid ${(theme.vars || theme).palette.divider}` },
         '&:hover': {
           backgroundColor: (theme.vars || theme).palette.action.hover,
@@ -75,7 +75,7 @@ export const dataGridCustomizations: DataGridProComponents<Theme> & DataGridProC
           },
         },
       }),
-      iconButtonContainer: ({ theme }) => ({
+      iconButtonContainer: ({ theme }: any) => ({
         [`& .${iconButtonClasses.root}`]: {
           border: 'none',
           backgroundColor: 'transparent',
@@ -96,7 +96,7 @@ export const dataGridCustomizations: DataGridProComponents<Theme> & DataGridProC
           }),
         },
       }),
-      menuIconButton: ({ theme }) => ({
+      menuIconButton: ({ theme }: any) => ({
         border: 'none',
         backgroundColor: 'transparent',
         '&:hover': {
@@ -115,11 +115,11 @@ export const dataGridCustomizations: DataGridProComponents<Theme> & DataGridProC
           },
         }),
       }),
-      filterForm: ({ theme }) => ({
+      filterForm: ({ theme }: any) => ({
         gap: theme.spacing(1),
         alignItems: 'flex-end',
       }),
-      columnsManagementHeader: ({ theme }) => ({
+      columnsManagementHeader: ({ theme }: any) => ({
         paddingRight: theme.spacing(3),
         paddingLeft: theme.spacing(3),
       }),

@@ -1,4 +1,4 @@
-import * as React from 'react';
+
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -11,6 +11,7 @@ import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 import SideMenuMobile from './SideMenuMobile';
 import MenuButton from './MenuButton';
 import ColorModeIconDropdown from '../../../shared-theme/ColorModeIconDropdown';
+import * as React from 'react';
 
 const Toolbar = styled(MuiToolbar)({
   width: '100%',

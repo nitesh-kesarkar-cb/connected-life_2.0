@@ -1,4 +1,4 @@
-import * as React from 'react';
+
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
@@ -17,8 +17,9 @@ import ForgotPassword from './components/ForgotPassword';
 import AppTheme from '../../../shared-theme/AppTheme';
 import ColorModeSelect from '../../../shared-theme/ColorModeSelect';
 import { GoogleIcon, FacebookIcon, SitemarkIcon } from './components/CustomIcons';
+import * as React from 'react';
 
-const Card = styled(MuiCard)(({ theme }) => ({
+const Card = styled(MuiCard)(({ theme }: any) => ({
   display: 'flex',
   flexDirection: 'column',
   alignSelf: 'center',
@@ -37,7 +38,7 @@ const Card = styled(MuiCard)(({ theme }) => ({
   }),
 }));
 
-const SignInContainer = styled(Stack)(({ theme }) => ({
+const SignInContainer = styled(Stack)(({ theme }: any) => ({
   height: 'calc((1 - var(--template-frame-height, 0)) * 100dvh)',
   minHeight: '100%',
   padding: theme.spacing(2),

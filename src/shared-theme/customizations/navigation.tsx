@@ -1,4 +1,4 @@
-import * as React from 'react';
+
 import { alpha } from '@mui/material/styles';
 import type { Theme, Components } from '@mui/material/styles';
 import type { SvgIconProps } from '@mui/material/SvgIcon';
@@ -9,12 +9,13 @@ import { selectClasses } from '@mui/material/Select';
 import { tabClasses } from '@mui/material/Tab';
 import UnfoldMoreRoundedIcon from '@mui/icons-material/UnfoldMoreRounded';
 import { gray, brand } from '../themePrimitives';
+import * as React from 'react';
 
 /* eslint-disable import/prefer-default-export */
 export const navigationCustomizations: Components<Theme> = {
   MuiMenuItem: {
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: ({ theme }: any) => ({
         borderRadius: (theme.vars || theme).shape.borderRadius,
         padding: '6px 8px',
         [`&.${menuItemClasses.focusVisible}`]: {
@@ -36,7 +37,7 @@ export const navigationCustomizations: Components<Theme> = {
           margin: '0 -8px',
         },
       },
-      paper: ({ theme }) => ({
+      paper: ({ theme }: any) => ({
         marginTop: '4px',
         borderRadius: (theme.vars || theme).shape.borderRadius,
         border: `1px solid ${(theme.vars || theme).palette.divider}`,
@@ -64,7 +65,7 @@ export const navigationCustomizations: Components<Theme> = {
       )),
     },
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: ({ theme }: any) => ({
         borderRadius: (theme.vars || theme).shape.borderRadius,
         border: '1px solid',
         borderColor: gray[200],
@@ -102,7 +103,7 @@ export const navigationCustomizations: Components<Theme> = {
           },
         }),
       }),
-      select: ({ theme }) => ({
+      select: ({ theme }: any) => ({
         display: 'flex',
         alignItems: 'center',
         ...theme.applyStyles('dark', {
@@ -120,7 +121,7 @@ export const navigationCustomizations: Components<Theme> = {
       underline: 'none',
     },
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: ({ theme }: any) => ({
         color: (theme.vars || theme).palette.text.primary,
         fontWeight: 500,
         position: 'relative',
@@ -150,14 +151,14 @@ export const navigationCustomizations: Components<Theme> = {
   },
   MuiDrawer: {
     styleOverrides: {
-      paper: ({ theme }) => ({
+      paper: ({ theme }: any) => ({
         backgroundColor: (theme.vars || theme).palette.background.default,
       }),
     },
   },
   MuiPaginationItem: {
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: ({ theme }: any) => ({
         '&.Mui-selected': {
           color: 'white',
           backgroundColor: (theme.vars || theme).palette.grey[900],
@@ -174,7 +175,7 @@ export const navigationCustomizations: Components<Theme> = {
   MuiTabs: {
     styleOverrides: {
       root: { minHeight: 'fit-content' },
-      indicator: ({ theme }) => ({
+      indicator: ({ theme }: any) => ({
         backgroundColor: (theme.vars || theme).palette.grey[800],
         ...theme.applyStyles('dark', {
           backgroundColor: (theme.vars || theme).palette.grey[200],
@@ -184,7 +185,7 @@ export const navigationCustomizations: Components<Theme> = {
   },
   MuiTab: {
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: ({ theme }: any) => ({
         padding: '6px 8px',
         marginBottom: '8px',
         textTransform: 'none',
@@ -217,7 +218,7 @@ export const navigationCustomizations: Components<Theme> = {
   },
   MuiStepConnector: {
     styleOverrides: {
-      line: ({ theme }) => ({
+      line: ({ theme }: any) => ({
         borderTop: '1px solid',
         borderColor: (theme.vars || theme).palette.divider,
         flex: 1,
@@ -227,7 +228,7 @@ export const navigationCustomizations: Components<Theme> = {
   },
   MuiStepIcon: {
     styleOverrides: {
-      root: ({ theme }) => ({
+      root: ({ theme }: any) => ({
         color: 'transparent',
         border: `1px solid ${gray[400]}`,
         width: 12,
@@ -269,7 +270,7 @@ export const navigationCustomizations: Components<Theme> = {
   },
   MuiStepLabel: {
     styleOverrides: {
-      label: ({ theme }) => ({
+      label: ({ theme }: any) => ({
         '&.Mui-completed': {
           opacity: 0.6,
           ...theme.applyStyles('dark', { opacity: 0.5 }),

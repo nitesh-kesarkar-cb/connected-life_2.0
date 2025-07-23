@@ -1,13 +1,12 @@
 // src/routes.tsx
 import { createRoute, createRootRoute, redirect, Outlet, Navigate } from '@tanstack/react-router';
-import SignIn from '../auth/pages/sign-in/SignIn';
-import SignUp from '../auth/pages/sign-up/SignUp';
-import Dashboard from '../dashboard/Dashboard';
+import { lazy, Suspense } from 'react';
 
-const NotFoundComponent = () => {
-  // You can redirect to sign-in here or just render a message
-  return <Navigate to="/sign-in" replace />; // If you have a Navigate component or use router's redirect method
-};
+const SignIn = lazy(() => import('../pages/auth/sign-in/SignIn'));
+const SignUp = lazy(() => import('../pages/auth/sign-up/SignUp'));
+const Dashboard = lazy(() => import('../pages/dashboard/Dashboard'));
+
+const NotFoundComponent = () => <Navigate to="/sign-in" replace />;
 
 
 const IndexRoute = createRoute({
@@ -45,7 +44,9 @@ const NotFoundRoute = createRoute({
 });
 
 const RootRoute = createRootRoute({
-  component: () => <Outlet />,
+  component: () => <Suspense fallback={<div>Loading...</div>}>
+      <Outlet />
+    </Suspense>,
   notFoundComponent: NotFoundComponent
 });
 
